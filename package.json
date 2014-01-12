@@ -1,0 +1,21 @@
+{
+  "name": "html5app",
+  "version": "0.1.0",
+  "description": "",
+  "main": "html5app-server.js",
+  "dependencies": {
+    "express": "~3.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vfeskov/html5app.git"
+  },
+  "author": "Vladimir Feskov <v@vladimirfeskov.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vfeskov/html5app/issues"
+  }
+}

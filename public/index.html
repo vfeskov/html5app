@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" ng-app="html5app">
+<head>
+    <meta charset="utf-8" />
+    <title>HTML5 mode test app</title>
+    <style>
+        .fading.ng-enter{
+            -webkit-transition: 0.5s linear all;
+            -moz-transition: 0.5s linear all;
+            -o-transition: 0.5s linear all;
+            transition: 0.5s linear all;
+            opacity:0;
+        }
+        .fading.ng-enter.ng-enter-active{
+            opacity:1;
+        }
+    </style>
+</head>
+<body>
+<h1>Testing HTML5 mode links.</h1>
+<ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/posts">Posts</a></li>
+</ul>
+<div ng-view class="fading"></div>
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-animate.js"></script>
+<script>
+    angular.module('html5app', ['ngRoute', 'ngAnimate'])
+        .config(['$locationProvider', '$routeProvider', function config ($locationProvider, $routeProvider){
+            //enabling HTML5 mode
+            $locationProvider.html5Mode(true).hashPrefix('!');
+            //setting up routes
+            $routeProvider.when('/',{
+                templateUrl: '/home.html'
+            });
+            $routeProvider.when('/about',{
+                templateUrl: '/about.html'
+            });
+            $routeProvider.when('/posts',{
+                templateUrl: '/posts.html'
+            });
+        }]);
+</script>
+</body>
+</html>
